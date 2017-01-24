@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .menu{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            border-bottom: 1px solid #0084FF;
+        }
+        .menu li {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: center;
+            color: #B7BBC0;
+            letter-spacing: .33px;
+            height: 84px;
+            line-height: 84px;
+            font-size: 28px;
+        }
+        .menu li.active {
+            color: #0084FF;
+            border-bottom: 6px solid #0084FF;
+        }
+        .main{
+            overflow: hidden;
+        }
+        .main>div{
+            display: none;
+        }
+        .main>div.active{
+            display: block;
+        }
+        .animated {
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        .animated.bounceInLeft,
+        .animated.bounceInRight {
+            -webkit-animation-duration: .75s;
+            animation-duration: .75s;
+        }
+        @keyframes bounceInLeft {
+            from, 60%, 75%, 90%, to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(-3000px, 0, 0);
+                transform: translate3d(-3000px, 0, 0);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: translate3d(25px, 0, 0);
+                transform: translate3d(25px, 0, 0);
+            }
+
+            75% {
+                -webkit-transform: translate3d(-10px, 0, 0);
+                transform: translate3d(-10px, 0, 0);
+            }
+
+            90% {
+                -webkit-transform: translate3d(5px, 0, 0);
+                transform: translate3d(5px, 0, 0);
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .bounceInLeft {
+            -webkit-animation-name: bounceInLeft;
+            animation-name: bounceInLeft;
+        }
+
+        @keyframes bounceInRight {
+            from, 60%, 75%, 90%, to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(3000px, 0, 0);
+                transform: translate3d(3000px, 0, 0);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: translate3d(-25px, 0, 0);
+                transform: translate3d(-25px, 0, 0);
+            }
+
+            75% {
+                -webkit-transform: translate3d(10px, 0, 0);
+                transform: translate3d(10px, 0, 0);
+            }
+
+            90% {
+                -webkit-transform: translate3d(-5px, 0, 0);
+                transform: translate3d(-5px, 0, 0);
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .bounceInRight {
+            -webkit-animation-name: bounceInRight;
+            animation-name: bounceInRight;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li class="active" data-status="jj">接机</li>
+    <li class="" data-status="sj">送机</li>
+</ul>
+<div class="main" id="main">
+    <div class="active">
+        <p>1111111111111111111111111</p>
+        <p>1111111111111111111111111</p>
+    </div>
+    <div>
+        <p>222222222222222222222222222222</p>
+        <p>222222222222222222222222222222222</p>
+    </div>
+</div>
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    $(function(){
+        $('.menu li').off('click').on('click',function(){
+            var _this= $(this).index();
+            $('.menu li').removeClass('active');
+            $(this).addClass('active')
+            $('#main div').removeClass('active');
+            if(_this == 0){
+                $('#main div').eq(0).addClass('active');
+                $('#main div').eq(1).addClass('animated bounceInRight');
+            }else{
+                $('#main div').eq(1).addClass('active animated bounceInRight');
+                $('#main div').eq(0).addClass('animated bounceInLeft');
+            }
+        })
+    })
+</script>
+</html>

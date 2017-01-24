@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .reflect-below-p {
+            padding-bottom: 176px;
+        }
+        .reflect-below{
+            -webkit-box-reflect: below;  /*above,below,left,right，分别表示上下左右*/
+        }
+        .reflect-right{
+            -webkit-box-reflect: right;
+        }
+        .reflect-right-translate{
+            -webkit-box-reflect: right 10px;
+        }
+        .reflect-below-mask{
+            -webkit-box-reflect: below 0 linear-gradient(transparent, white);
+        }
+        .reflect-below-img{
+            -webkit-box-reflect: below 0 url(shuai2.png);
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            overflow: hidden;
+        }
+        .radius{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 149px dotted;
+            /* IE7,IE8圆尺寸要小1像素同时有1像素偏移 */
+            margin: 0 0 1px 1px;
+            border-width: 0vw;   /*高版本浏览器*/
+            margin: 0vw;         /*高版本浏览器*/
+            background-color: currentColor;    /*ie8*/
+        }
+    </style>
+</head>
+<body>
+    <strong>下倒影</strong>
+    <p class="reflect-below-p"><img src="chaowei.jpg" class="reflect-below"></p>
+
+    <strong>右倒影</strong>
+    <p><img src="chaowei.jpg" class="reflect-right"></p>
+    <strong>右倒影同时有偏移</strong>
+    <p><img src="chaowei.jpg" class="reflect-right-translate"></p>
+
+
+    <strong>下倒影同时有遮罩（线性渐变）</strong>
+    <p class="reflect-below-p"><img src="chaowei.jpg" class="reflect-below-mask"></p>
+
+
+    <strong>下倒影同时有遮罩（使用png图片）</strong>
+    <p class="reflect-below-p"><img src="chaowei.jpg" class="reflect-below-img"></p>
+
+
+    <div class="box">
+        <i class="radius"></i>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+box-orient用来确定子元素的方向。是横着排还是竖着走。可选的值有：
+
+horizontal | vertical | inline-axis | block-axis | inherit      inline-axis是默认值。 
+
+且horizontal与inline-axis的表现似乎一致的，让子元素横排；而vertical与block-axis的表现也是一致的，让元素纵列。
+
+
+
+
+box-direction是用来确定子元素的排列顺序，可选值有：
+
+normal | reverse | inherit    reverse表示反转     normal为默认值
+
+
+
+box-align与box-pack都是决定盒子内部剩余空间怎么使用的。在行为效果上就是表现为“对齐”。
+
+
+box-align决定了垂直方向上的空间利用，也就是垂直方向上的对齐表现。可选值有：
+
+start | end | center | baseline | stretch    stretch为默认值，为拉伸，也就是父标签高度多高，其孩子元素的高度就多高
+
+
+
+box-pack决定了父标签水平遗留空间的使用，其可选值有：
+
+start | end | center | justify            start是box-pack属性的默认值，justify表示两端对齐。 
+
+
+
+box-lines是用来决定子元素是可以换行显示呢？还是就算挤出油还是单行显示。两个可选值：
+
+single | multiple         其中single是默认值，表示死活不换行。
+
+
+
+box-ordinal-group，数值越小，位置就越靠前，例如：box-ordinal-group:1的组就会在box-ordinal-group:2的组前面显示。
+
+
+
+flex-flow：flex-direction ||  flex-wrap                  -webkit-flex-flow: row wrap;
+
+
+
+flex-direction：定义弹性盒子元素的排列方向。可选值有：
+
+flex-direction: row | row-reverse | column | column-reverse;  row | row-reverse：水平方向   column | column-reverse;垂直方向
+
+
+
+flex-wrap：控制flex容器是单行或者多行。
+
+flex-wrap: nowrap | wrap | wrap-reverse;
+
+flex-wrap: wrap;   支持换行
+
+ 
+justify-content: space-between; 两端对齐   Y轴    cross axis
+给父盒子加，给子元素width百分百，自动换行
+justify-content:  flex-start  flex-end  center  space-between  space-around
+
+flex-start : 伸缩项目向一行的起始位置靠齐。
+flex-end : 伸缩项目向一行的结束位置靠齐。
+center : 伸缩项目向一行的中间位置靠齐。
+space-around : 伸缩项目会平均地分布在行里，两端保留一半的空间。如果剩余空间是负数，或该行只有一个伸缩项目，则该值等效于center。
+
+
+align-items：center;  水平对齐   X轴    main axis
+align-items: flex-start | flex-end | center | baseline | stretch;
+
+flex-grow 可以定义一个Flex项目的扩大比例。它接受一个没有单位的值作为一个比例。值不能为负值
+flex-grow:1;flex-grow:2;
+
+
+
+超出文字用...隐藏
+.text-over{
+  
+  -webkit-box-orient: vertical;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 1;
+
+  overflow: hidden;
+
+}
+
+完美的居中问题
+html   水平垂直都居中
+<div class="parent">
+     <div class="child">
+
+     </div>
+</div>
+
+css
+.parent{
+      display: flex;
+      height: 300px;
+      background: #f1f1f1;
+}
+.child{
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      background: red;
+}
+
+webstrom支持es6
+依次点击"File","Settings","Languages & Frameworks","Javascript",在"Javascript Language Version"中选择"ECMAScript6"。
+
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;

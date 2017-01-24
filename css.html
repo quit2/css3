@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            color: #fff;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+        }
+        .box1{
+            background: repeating-linear-gradient(60deg,#fb3,#fb3 15px,#58a 0, #58a 30px); /*条纹*/
+        }
+        .boxDiv{
+            width: 311px;
+            height: 300px;
+            background: #58a;
+            background-image: linear-gradient(white 1px,transparent 0), linear-gradient(90deg,white 1px, transparent 0);/*网格*/
+            background-size: 30px 30px;
+        }
+        .box2{
+            background: #655;
+            background-image: radial-gradient(tan 30%,transparent 0), radial-gradient(tan 30%,transparent 0);/*波点*/
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+        }
+        .box3{
+            background: hsl(20,40%,90%);
+            background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+            linear-gradient(90deg, #ab3 23px, transparent 0),
+            linear-gradient(90deg, #655 41px, transparent 0);
+            background-size: 41px 100%, 61px 100%,83px 100%;
+        }
+        @keyframes ants {
+            to{
+                background-position: 100%;
+            }
+        }
+        .marching-ants{
+            width: 300px;
+            padding: 1em;
+            border: 1px solid transparent;
+            background: linear-gradient(white,white) padding-box,repeating-linear-gradient(-45deg, black 0,black 25%,white 0,white 50%)0 / .6em .6em;
+            animation: ants 12s linear infinite;
+        }
+        .box4{
+            width: 300px;
+            height: 100px;
+            background: orange;
+            margin: 20px 0;
+            border-radius: 50% / 100% 100% 0 0;  /*单独指定水平和垂直半径，只要用一个斜杠分隔这2个值即可*/
+        }
+        .button{
+            display: block;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            transform: skewX(-45deg);
+            background: orange;
+        }
+        .button>div{
+            width: 100px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .imgBox{
+            -webkit-clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+            clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+            transition: 1s clip-path;;
+        }
+        .imgBox:hover{
+            -webkit-clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+        }
+        .nav{
+            margin-bottom: 20px;
+        }
+        .nav li{
+            display: inline-block;
+        }
+        .nav li a{
+            position: relative;
+            display: inline-block;
+            padding: .3em 1em 0;
+            color: #333;
+        }
+        .nav a:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #ccc;
+            background-image: linear-gradient(hsla(0,0%,100%,.6),hsla(0,0%,100%,0));
+            border: 1px solid rgba(0,0,0,.4);
+            border-bottom: none;
+            border-radius: .5em .5em 0 0;
+            box-shadow: 0 .15em white inset;
+            transform: perspective(.5em) rotateX(5deg);
+            transform-origin: bottom;
+            z-index: -1;
+        }
+        .nav .active a:before{
+            background: transparent;
+        }
+        .pie{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: yellowgreen;
+        }
+        .pie:before{
+            content: '';
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            background-color: #588;
+            border-radius: 0 100% 100% 0 / 50%;
+            transform-origin: left;
+        }
+        circle{
+            fill: yellowgreen;
+            stroke: #655;
+            stroke-width: 30;
+            stroke-dasharray: 20 10;
+        }
+        .imgCover{
+            display: block;
+            background: hsl(355,100%,50%);
+            width: 200px;
+            height: 150px;
+        }
+        .imgs{
+            mix-blend-mode: luminosity;
+        }
+    </style>
+</head>
+<body>
+     <div class="box box1"></div>
+     <div class="boxDiv"></div>
+     <div class="box box2"></div>
+     <div class="box box3"></div>
+     <div class="marching-ants"></div>
+     <div class="box4"></div>
+     <a href="javascript:void(0)" class="button">
+         <div>Click me</div>
+     </a>
+     <img src="ps4.jpg" class="imgBox">
+     <ul class="nav">
+        <li><a href="javascript:;">Home</a></li>
+        <li class="active"><a href="javascript:;">Projects</a></li>
+        <li><a href="javascript:;">About</a></li>
+     </ul>
+    <div class="pie"></div>
+    <svg width="100" height="100">
+        <circle r="30" cx="50" cy="50"></circle>
+    </svg>
+    <a href="javascript:void(0)" class="imgCover">
+        <img src="ps6.jpg" class="imgs">
+    </a>
+</body>
+</html>

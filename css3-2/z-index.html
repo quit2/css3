@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red, .green, .blue {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        .red {
+            background: red;
+            z-index: 1;
+        }
+        .green {
+            background: green;
+            left: 5%;
+            top: 6%;
+        }
+        .blue {
+            background: blue;
+            left: 10%;
+            top: 16%;
+        }
+        div:first-child {   /*opacity对z-index的影响*/
+            opacity: .99;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span class="red">Red</span>
+</div>
+<div>
+    <span class="green">Green</span>
+</div>
+<div>
+    <span class="blue">Blue</span>
+</div>
+
+</body>
+</html>

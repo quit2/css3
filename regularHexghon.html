@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/regularHexghon.css">
+    <!--链接：https://zhuanlan.zhihu.com/p/24489820-->
+</head>
+<body>
+    <div class="lb01"></div>
+
+    <div class="lb02">
+        <div>
+            <div>
+                <img src="cat.jpg">
+            </div>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="test">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="dob"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="dob"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    canvas.width = 400;
+    canvas.height = 400;
+    var cc = canvas.getContext("2d");
+
+    // 填充一个背景
+    cc.fillStyle = "transparent";
+    cc.rect(0 , 0 , 400 , 400);
+    cc.fill();
+
+    cc.beginPath();
+    for (var i = 0 ; i < 6 ; i++) {
+        var x =  Math.cos((i * 60)/180 * Math.PI) * 150 + 200 ;
+        var y = -Math.sin((i * 60)/180 * Math.PI) * 150 + 200;
+        cc.lineTo(x,y);
+    }
+    cc.closePath();
+
+    cc.lineWidth = 2;
+    cc.fillStyle = "#fc3598";
+    cc.fill();
+</script>
+</html>

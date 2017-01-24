@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .screen {
+            background: red;
+            width: 500px;
+            height: 500px;
+            margin: 100px auto 0;
+            perspective: 1000px;  /*舞台视角大小1000像素 translateZ 最大值小于1000，  大于1000则看不见*/
+
+        }
+        .screen .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+
+            transition: all linear .7s;
+            animation: scaleWidth 10s linear infinite;
+        }
+        @keyframes scaleWidth{
+            0%{
+                transform-origin:center;
+                transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+            }
+            100%{
+                transform-origin:center;
+                transform: rotateZ(-360deg) rotateX(-360deg) rotateY(-360deg);
+            }
+        }
+        .box .side{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .box .front {
+            background: #92c;
+            transform-origin: 0% 0%;
+            transform: translateZ(0px);
+        }
+        .box .back {
+            background: #c9a;
+            transform: translateZ(-200px);
+        }
+        .box .left {
+            background: #65a;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            left: 0;
+            top: 0;
+        }
+        .box .right {
+            background: #65a;
+            transform-origin: right;
+            transform: rotateY(-90deg);
+            right: 0;
+            top: 0;
+        }
+        .box .top {
+            background: #6c3;
+            transform-origin: top;
+            transform: rotateX(-90deg);
+            left: 0;
+            top: 0;
+        }
+        .box .bottom {
+            left: 0;
+            bottom: 0;
+            background: #cf3;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="screen">
+        <div class="box">
+            <div class="front side">FRONT</div>
+            <div class="back side">BACK</div>
+            <div class="top side">TOP</div>
+            <div class="bottom side">BOTTOM</div>
+            <div class="left side">LEFT</div>
+            <div class="right side">RIGHT</div>
+        </div>
+    </div>
+</body>
+</html>

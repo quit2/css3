@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Arima+Madurai");
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #58646b; }
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Arima Madurai', cursive; }
+
+.elephant-wrapper {
+  position: relative;
+  margin: 5% auto;
+  max-width: 200px;
+  transform: scale(1.2); }
+
+/*头部*/
+.elephant-head {
+  position: relative;
+  width: 53%;
+  margin: 0 auto;
+  overflow: auto;
+  height: auto;
+  padding-bottom: 61%;
+  background: #c5c6ce;
+  border-radius: 50% 50% 60% 60%;
+  border: 3px solid #62242f; }
+
+/*耳朵*/
+.elephant-ear-left, .elephant-ear-right {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background: #c5c6ce;
+  border: 3px solid #62242f; }
+
+.elephant-ear-left {
+  left: -3%;
+  border-radius: 50% 45% 100% 20%;
+  transform: rotate(-5deg); }
+
+.elephant-ear-right {
+  right: -3%;
+  border-radius: 45% 50% 20% 100%;
+  transform: rotate(5deg); }
+
+.elephant-ear-left-inner,
+.elephant-ear-right-inner {
+  position: absolute;
+  top: 15%;
+  width: 60%;
+  height: 60%;
+  background: #FF7585;
+  border: 3px solid #62242f; }
+
+.elephant-ear-left-inner {
+  right: 15%;
+  border-radius: 50% 45% 100% 20%; }
+
+.elephant-ear-right-inner {
+  left: 15%;
+  border-radius: 45% 50% 20% 100%; }
+
+/*眼睛*/
+.elephant-eye-left, .elephant-eye-right {
+  position: absolute;
+  top: 45%;
+  width: 20%;
+  height: 20%;
+  background: #62242f;
+  border-radius: 50%; }
+
+.elephant-eye-left {
+  left: 20%; }
+
+.elephant-eye-right {
+  right: 20%; }
+
+.elephant-eye-left-inner,
+.elephant-eye-right-inner {
+  width: 30%;
+  background: white;
+  height: 30%;
+  border-radius: 50%;
+  margin: 20%; }
+
+/*眼睫毛*/
+.elephant-left-eyelash1,
+.elephant-left-eyelash2,
+.elephant-left-eyelash3,
+.elephant-right-eyelash1,
+.elephant-right-eyelash2,
+.elephant-right-eyelash3 {
+  position: absolute;
+  width: 12%;
+  height: 2%;
+  background: #3B1019; }
+
+.elephant-left-eyelash1,
+.elephant-left-eyelash2,
+.elephant-left-eyelash3 {
+  left: 12%;
+  border-radius: 50% / 0 0 0 100%; }
+
+.elephant-right-eyelash1,
+.elephant-right-eyelash2,
+.elephant-right-eyelash3 {
+  right: 12%;
+  border-radius: 50% / 0 0 0 100%; }
+
+.elephant-left-eyelash1 {
+  top: 45%;
+  transform: rotate(13deg); }
+
+.elephant-left-eyelash2 {
+  top: 48%;
+  transform: rotate(11deg); }
+
+.elephant-left-eyelash3 {
+  top: 51%; }
+
+.elephant-right-eyelash1 {
+  top: 45%;
+  transform: rotate(-13deg); }
+
+.elephant-right-eyelash2 {
+  top: 48%;
+  transform: rotate(-11deg); }
+
+.elephant-right-eyelash3 {
+  top: 51%; }
+
+/*红晕*/
+.elephant-blush-left, .elephant-blush-right {
+  position: absolute;
+  bottom: 10%;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 3px #FBA09B;
+  background: #FBA09B; }
+
+.elephant-blush-left {
+  left: 12%; }
+
+.elephant-blush-right {
+  right: 12%; }
+
+/*象鼻*/
+.elephant-trunk {
+  position: absolute;
+  width: 17%;
+  height: 70%;
+  background: #c5c6ce;
+  left: 39%;
+  top: 72%;
+  border-radius: 27% 10% 26% 50%;
+  border: 3px solid #62242f;
+  border-top: 0;
+  transform: rotate(5deg);
+  overflow: hidden; }
+
+.elephant-trunk:before {
+  width: 50%;
+  height: 14%;
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 43%;
+  border: 2px solid #62242f;
+  border-left: 0;
+  border-right: 0; }
+
+.elephant-trunk-opening {
+  width: 100%;
+  height: 7%;
+  background: #fba09b;
+  bottom: -2px;
+  position: absolute;
+  border: 2px solid #62242f;
+  border-radius: 50%; }
+
+.elephant-body {
+  width: 65%;
+  height: 90%;
+  top: 80%;
+  left: 17.5%;
+  background: #c5c6ce;
+  position: absolute;
+  z-index: -1;
+  border: 3px solid #62242f;
+  border-radius: 50% 50% 10% 10%; }
+
+/*象脚*/
+.elephant-left-back-foot, .elephant-right-back-foot {
+  position: absolute;
+  overflow: hidden;
+  width: 52%;
+  height: 52%;
+  background: #c5c6ce;
+  bottom: -10%;
+  border-radius: 70% 70% 50% 50%;
+  border: 3px solid #62242f; }
+
+.elephant-left-back-foot {
+  left: -5%; }
+
+.elephant-right-back-foot {
+  right: -5%; }
+
+.elephant-left-toe1,
+.elephant-left-toe2,
+.elephant-left-toe3,
+.elephant-right-toe1,
+.elephant-right-toe2,
+.elephant-right-toe3 {
+  position: absolute;
+  bottom: -5%;
+  width: 30%;
+  height: 30%;
+  background: #F5D9D3;
+  border-radius: 50%;
+  border: 2px solid #62242f; }
+
+.elephant-left-toe1 {
+  left: 10%; }
+
+.elephant-left-toe2 {
+  left: 33%; }
+
+.elephant-left-toe3 {
+  left: 57%; }
+
+.elephant-right-toe1 {
+  right: 10%; }
+
+.elephant-right-toe2 {
+  right: 33%; }
+
+.elephant-right-toe3 {
+  right: 57%; }
